@@ -1,0 +1,80 @@
+**** I am the best Git Commands Cheatsheet in the Universe *****
+
+git config user.name  -> Display username
+git config user.email -> Display user's email
+git config --global user.name "Ankit"  -> set the username to given
+git config --global user.email "blacktornado2108@gmail.com"  -> set the user email to given
+git config --list  -> Displays all the settings of git
+
+git status -> know status
+
+git init -> Initialise empty git repository, (a hidden .git folder is made, use ls -a to view it)
+
+git add .  , git add --a    -> move all files to staging area
+git add <file_name>    -> Move a particular file to staging area
+
+git restore --staged <file_name> -> Move the specified file from staging area to outside of it
+
+git rm --cached <file_name>   -> to unstage the file and untrack it
+
+git commit -m "Message"  -> Commit files (a snapshot will be taken)
+
+git log  -> Show all commits and their corresponding hashes (press q to exit)
+git log -p  -> Show commit with modifications
+git log -p -3   -> Show 3 commits with modifications
+git log --stat  -> Show us concise information about commit and modifications
+
+git reset <commit_id> -> Move the repo to a particular commit
+
+git stash    -> put all the staged changes into stash area
+git stash pop    -> bring back all the changes from stash area
+git stash clean  -> all the changes in the stash area are deleted and cannot be recovered
+
+git remote add origin <remote_repo_url>    -> Adds the remote repo URL to our local repo (origin is the name of the URL, we are giving)
+git remote -v   -> show all remote repo URL attached to that local repo
+git remote add upstream <original_repo_url>  -> Add a upstream branch, origin is our project's URL, upstream is URL where the original project exists
+
+git push <URL> <branch_name>   -> Push the specified branch to specified URL(generally origin)
+git push origin master    -> Push the master branch to the origin specified
+git push origin <branch_name> -f  -> Push forcefully
+
+git branch <new_branch_name>
+git checkout <branch_name>  -> Go to the branch specified, HEAD will come on that branch
+HEAD is a pointer, which points to a branch, at any given time
+All the new commits that we do, will be added to the branch, that the HEAD is pointing on
+
+- One branch can only open one pull request
+
+rm -rf .git  -> Remove .git file and hence all git repository details
+
+git clone <URL>  -> clone the whole repository from the URL to the working directory (No git init needed) , ** the repository will contain all the commits and changes **
+
+git add <> -> is a multipurpose command
+
+touch index.html   -> Make a new file named index.html
+
+**** Make a new file named .gitignore using touch command and put all the path of waste files in it. After that, git will ignore those files. ****
+
+git diff   -> compares staging area with working directory
+git diff --stage  -> compares staging area with last commit
+
+git commit -a -m "Commit message"   -> Commits all tracked files skipping staging area (untracked files will remain as it is)
+
+If we rename a file, git will show that new file has been added and old has been deleted, but we have just renamed
+git rm <file_name>  -> git will remove the file and stage it
+git mv <file_name> <new_file_name>  -> rename the file and stage it
+
+git fetch --all --prune    -> fetch all the changes
+
+git diff --staged   -> will list the changes between the staging area and our last commit
+git diff HEAD   -> lists all changes in the working directory tree since your last commit
+git diff HEAD <file-name>   -> to view the changes within a specific file
+git diff <branch1> <branch2>   -> lists the changes between the tips of branch1 and branch2
+git diff <commit1hash> <commit2hash>   -> compare the changes between two commits
+
+
+
+
+
+
+
