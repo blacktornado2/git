@@ -31,6 +31,7 @@ git stash pop    -> bring back all the changes from stash area
 git stash clean  -> all the changes in the stash area are deleted and cannot be recovered
 
 git remote add origin <remote_repo_url>    -> Adds the remote repo URL to our local repo (origin is the name of the URL, we are giving)
+git remote add myOrigin <remote_repo_url>   -> Adds the remote repo URL to our local repo, whenever we will write myOrigin, we will mean that url given
 git remote -v   -> show all remote repo URL attached to that local repo
 git remote add upstream <original_repo_url>  -> Add a upstream branch, origin is our project's URL, upstream is URL where the original project exists
 
@@ -54,6 +55,7 @@ git add <> -> is a multipurpose command
 touch index.html   -> Make a new file named index.html
 
 **** Make a new file named .gitignore using touch command and put all the path of waste files in it. After that, git will ignore those files. ****
+.gitignore rules -> https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
 git diff   -> compares staging area with working directory
 git diff --stage  -> compares staging area with last commit
@@ -71,6 +73,9 @@ git diff HEAD   -> lists all changes in the working directory tree since your la
 git diff HEAD <file-name>   -> to view the changes within a specific file
 git diff <branch1> <branch2>   -> lists the changes between the tips of branch1 and branch2
 git diff <commit1hash> <commit2hash>   -> compare the changes between two commits
+
+git restore --staged <file_name>    -> remove a specific file from the staging area
+git restore --staged .    -> remove all the files from the staging area
 
 
 
