@@ -1,43 +1,43 @@
 **** I am the best Git Commands Cheatsheet in the Universe *****
 
-git config user.name  -> Display username
-git config user.email -> Display user's email
-git config --global user.name "Ankit"  -> set the username to given
-git config --global user.email "blacktornado2108@gmail.com"  -> set the user email to given
-git config --list  -> Displays all the settings of git
+- git config user.name  -> Display username
+- git config user.email -> Display user's email
+- git config --global user.name "Ankit"  -> set the username to given
+- git config --global user.email "blacktornado2108@gmail.com"  -> set the user email to given
+- git config --list  -> Displays all the settings of git
 
-git status -> know status
+- git status -> know status
 
-git init -> Initialise empty git repository, (a hidden .git folder is made, use ls -a to view it)
+- git init -> Initialise empty git repository, (a hidden .git folder is made, use ls -a to view it)
 
-git add .  , git add --a    -> move all files to staging area
-git add <file_name>    -> Move a particular file to staging area
+-git add .  , git add --a    -> move all files to staging area
+- git add <file_name>    -> Move a particular file to staging area
 
-git restore --staged <file_name> -> Move the specified file from staging area to outside of it
+- git restore --staged <file_name> -> Move the specified file from staging area to outside of it
 
-git rm --cached <file_name>   -> to unstage the file and untrack it
+- git rm --cached <file_name>   -> to unstage the file and untrack it
 
-git commit -m "Message"  -> Commit files (a snapshot will be taken)
+- git commit -m "Message"  -> Commit files (a snapshot will be taken)
 
-git log  -> Show all commits and their corresponding hashes (press q to exit)
-git log -p  -> Show commit with modifications
-git log -p -3   -> Show 3 commits with modifications
-git log --stat  -> Show us concise information about commit and modifications
+- git log  -> Show all commits and their corresponding hashes (press q to exit)
+- git log -p  -> Show commit with modifications
+- git log -p -3   -> Show 3 commits with modifications
+- git log --stat  -> Show us concise information about commit and modifications
 
-git reset <commit_id> -> Move the repo to a particular commit
+- git reset <commit_id> -> Move the repo to a particular commit
 
-git stash    -> put all the staged changes into stash area
-git stash pop    -> bring back all the changes from stash area
-git stash clean  -> all the changes in the stash area are deleted and cannot be recovered
+- git stash    -> put all the staged changes into stash area
+- git stash pop    -> bring back all the changes from stash area
+- git stash clean  -> all the changes in the stash area are deleted and cannot be recovered
 
-git remote add origin <remote_repo_url>    -> Adds the remote repo URL to our local repo (origin is the name of the URL, we are giving)
-git remote add myOrigin <remote_repo_url>   -> Adds the remote repo URL to our local repo, whenever we will write myOrigin, we will mean that url given
-git remote -v   -> show all remote repo URL attached to that local repo
-git remote add upstream <original_repo_url>  -> Add a upstream branch, origin is our project's URL, upstream is URL where the original project exists
+- git remote add origin <remote_repo_url>    -> Adds the remote repo URL to our local repo (origin is the name of the URL, we are giving)
+- git remote add myOrigin <remote_repo_url>   -> Adds the remote repo URL to our local repo, whenever we will write myOrigin, we will mean that url given
+- git remote -v   -> show all remote repo URL attached to that local repo
+- git remote add upstream <original_repo_url>  -> Add a upstream branch, origin is our project's URL, upstream is URL where the original project exists
 
-git push <URL> <branch_name>   -> Push the specified branch to specified URL(generally origin)
-git push origin master    -> Push the master branch to the origin specified
-git push origin <branch_name> -f  -> Push forcefully
+- git push <URL> <branch_name>   -> Push the specified branch to specified URL(generally origin)
+- git push origin master    -> Push the master branch to the origin specified
+- git push origin <branch_name> -f  -> Push forcefully
 
 git branch <new_branch_name>
 git checkout <branch_name>  -> Go to the branch specified, HEAD will come on that branch
