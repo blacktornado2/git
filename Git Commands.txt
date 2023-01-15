@@ -1,5 +1,8 @@
 **** I am the best Git Commands Cheatsheet in the Universe *****
 
+Learn git -> https://learngitbranching.js.org/?NODEMO
+
+git config
 - git config user.name  -> Display username
 - git config user.email -> Display user's email
 - git config --global user.name "Ankit"  -> set the username to given
@@ -8,28 +11,58 @@
 
 - git status -> know status
 
+Status of untracked files:
+1. Untracked
+
+Status of tracked files:
+1. Unmodified
+2. Modified
+3. Staged
+
 - git init -> Initialise empty git repository, (a hidden .git folder is made, use ls -a to view it)
 
+git add
 - git add .  , git add --a    -> move all files to staging area
 - git add <file_name>    -> Move a particular file to staging area
+- git add <>       -> is a multipurpose command
+It is used to add a file to staging area
+When used on untracked files, it brings them to tracking area also
 
-- git restore --staged <file_name> -> Move the specified file from staging area to outside of it
+git commit
+- git commit -m "Message"  -> Commit files (a snapshot will be taken)
+- git commit -am "Commit message"   -> Commits all tracked files skipping staging area (untracked files will remain as it is)
+- git commit --amend     -> We can change(edit) the last commit without making another commit
+The above command will not work when the latest commit is pushed in remote repo
+
+git reset
+- git reset HEAD <fileName>    -> staging area -> modified
+- git reset <commit_id> -> Move the repo to a particular commit
+
+git checkout
+- git checkout -- <fileName>   -> modified -> unmodified (undo changes made)
+
+git stash
+- git stash    -> undo changes(modified file), but save those changes locally in stash
+- git stash pop -> return changes from stash to our working directory
+- git stash clear -> permanently delete changes from stash, they can't be recovered later
+- git stash list  -> Display the stash history in chronological order
+
+
+git restore
+git restore can change the status of tracked files
+- git restore --staged <file_name>  -> staging area -> modified
+- git restore <file_name>  -> modified -> unmodified
 
 - git rm --cached <file_name>   -> to unstage the file and untrack it
 
-- git commit -m "Message"  -> Commit files (a snapshot will be taken)
-
+git log
 - git log  -> Show all commits and their corresponding hashes (press q to exit)
 - git log -p  -> Show commit with modifications
 - git log -p -3   -> Show 3 commits with modifications
 - git log --stat  -> Show us concise information about commit and modifications
+- git log --all --decorate --oneline --graph   -> Beautify git log
 
-- git reset <commit_id> -> Move the repo to a particular commit
-
-- git stash    -> put all the staged changes into stash area
-- git stash pop    -> bring back all the changes from stash area
-- git stash clean  -> all the changes in the stash area are deleted and cannot be recovered
-
+git remote
 - git remote add origin <remote_repo_url>    -> Adds the remote repo URL to our local repo (origin is the name of the URL, we are giving)
 - git remote add myOrigin <remote_repo_url>   -> Adds the remote repo URL to our local repo, whenever we will write myOrigin, we will mean that url given
 - git remote -v   -> show all remote repo URL attached to that local repo
@@ -39,6 +72,8 @@
 - git push origin master    -> Push the master branch to the origin specified
 - git push origin <branch_name> -f  -> Push forcefully
 
+git branching
+- git branch   -> List all branches
 - git branch <new_branch_name>
      OR                          -> Make a new branch with branchName specified
 - git checkout -b <newBranch>   
@@ -48,25 +83,23 @@
 HEAD is a pointer, which points to a branch, at any given time
 All the new commits that we do, will be added to the branch, that the HEAD is pointing on
 
+git merge
+git merge <branchName> -> merge the branch specified, with the one HEAD is currently on
+There are two types of merge:
+1. Fast forwarding merge: HEAD shifts to latest commit, no new commit is created, happens when the branch HEAD is on has no different commit
+2. Normal merge: a new commit is created, HEAD shifts to latest
+
+Merge conflicts arise when there is change in same file, same line
+We can do 3 things in case of merge conflicts:
+1. Current changes
+2. Incoming changes
+3. Accept both changes
+
 One branch can only open one pull request
 
 - rm -rf .git  -> Remove .git file and hence all git repository details
 
 - git clone <URL>  -> clone the whole repository from the URL to the working directory (No git init needed) , ** the repository will contain all the commits and changes **
-
-- git add <> -> is a multipurpose command
-It is used to add a file to staging area
-When used on untracked files, it brings them to tracking also
-
-- touch index.html   -> Make a new file named index.html
-
-**** Make a new file named .gitignore using touch command and put all the path of waste files in it. After that, git will ignore those files. ****
-.gitignore rules -> https://www.atlassian.com/git/tutorials/saving-changes/gitignore
-
-- git diff   -> compares staging area with working directory
-- git diff --stage  -> compares staging area with last commit
-
-- git commit -am "Commit message"   -> Commits all tracked files skipping staging area (untracked files will remain as it is)
 
 If we rename a file, git will show that new file has been added and old has been deleted, but we have just renamed
 - git rm <file_name>  -> git will remove the file and stage it
@@ -77,16 +110,20 @@ If we rename a file, git will show that new file has been added and old has been
 
 - git pull = git fetch + git merge
 
+git diff
+- git diff   -> compares staging area with working directory
+- git diff --stage  -> compares staging area with last commit
 - git diff --staged   -> will list the changes between the staging area and our last commit
 - git diff HEAD   -> lists all changes in the working directory tree since your last commit
 - git diff HEAD <file-name>   -> to view the changes within a specific file
 - git diff <branch1> <branch2>   -> lists the changes between the tips of branch1 and branch2
 - git diff <commit1hash> <commit2hash>   -> compare the changes between two commits
 
+git restore
 - git restore --staged <file_name>    -> remove a specific file from the staging area
 - git restore --staged .    -> remove all the files from the staging area
 
-Git rebase
+git rebase
 Used when we want to shift our commit(s) from one branch to other(mainly to main branch)
 When the commits are shifted from one branch to another, new commits are made which are almost identical to old ones
 New commits are made on the branch, on which rebasing is done
@@ -96,3 +133,11 @@ It helps in linear development
 - git rebase -i main        -> interactive console where we can select which commits to remove 
 git rebase can be a dangerous command, use it with due diligence
 
+- touch index.html   -> Make a new file named index.html
+
+gitignore
+**** Make a new file named .gitignore using touch command and put all the path of waste files in it. After that, git will ignore those files. ****
+.gitignore rules -> https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+
+Git Aliasing
+git config --global alias.'new Command' 'original Command' -> Make customised commands
