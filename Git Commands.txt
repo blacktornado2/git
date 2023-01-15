@@ -64,7 +64,7 @@ touch index.html   -> Make a new file named index.html
 git diff   -> compares staging area with working directory
 git diff --stage  -> compares staging area with last commit
 
-git commit -a -m "Commit message"   -> Commits all tracked files skipping staging area (untracked files will remain as it is)
+git commit -am "Commit message"   -> Commits all tracked files skipping staging area (untracked files will remain as it is)
 
 If we rename a file, git will show that new file has been added and old has been deleted, but we have just renamed
 git rm <file_name>  -> git will remove the file and stage it
@@ -89,5 +89,5 @@ It helps in linear development
 - git checkout <newBranch>   -> shift HEAD to newBranch
 - git rebase main            -> rebase commit(s) of newBranch to main
 - git rebase -i main        -> interactive console where we can select which commits to remove 
-
+git rebase can be a dangerous command, use it with due diligence
 
