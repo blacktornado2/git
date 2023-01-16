@@ -140,4 +140,4 @@ gitignore
 .gitignore rules -> https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
 Git Aliasing
-git config --global alias.'new Command' 'original Command' -> Make customised commands
+- git config --global alias.'new Command' 'original Command' -> Make customised commands
