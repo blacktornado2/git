@@ -37,6 +37,10 @@ The above command will not work when the latest commit is pushed in remote repo
 git reset
 - git reset HEAD <fileName>    -> staging area -> modified
 - git reset <commit_id> -> Move the repo to a particular commit
+* We can go back some commits using the following commands:
+- git reset --soft HEAD~2  -> 2 latest commits go to staging area(as changes), HEAD 2 commits back 
+- git reset --mixed HEAD~  -> 1 latest commit go to modified area, HEAD 1 commit back 
+- git reset --hard HEAD~5  -> 5 latest commits are removed permanently, HEAD 5 commit back 
 
 git checkout
 - git checkout -- <fileName>   -> modified -> unmodified (undo changes made)
