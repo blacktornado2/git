@@ -133,6 +133,10 @@ It helps in linear development
 - git rebase -i main        -> interactive console where we can select which commits to remove 
 git rebase can be a dangerous command, use it with due diligence
 
+git fork 
+* fork the project from the original repository to our own remote repo(identical)
+* Very helpful in open-source contribution
+* How does it work: fork repo -> make changes -> commit -> set own remote repo (git remote set myOrigin <>) -> push on myOrigin > raise a P.R.  
 
 git cherry-pick
 * Creates a new commit with the changes that the cherry-pick commit introduce 
