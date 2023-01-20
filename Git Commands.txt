@@ -61,6 +61,7 @@ git log
 - git log -p -3   -> Show 3 commits with modifications
 - git log --stat  -> Show us concise information about commit and modifications
 - git log --all --decorate --oneline --graph   -> Beautify git log
+- git reflog  -> See the previous actions and commands executed 
 
 git remote
 - git remote add origin <remote_repo_url>    -> Adds the remote repo URL to our local repo (origin is the name of the URL, we are giving)
@@ -131,6 +132,21 @@ It helps in linear development
 - git rebase main            -> rebase commit(s) of newBranch to main
 - git rebase -i main        -> interactive console where we can select which commits to remove 
 git rebase can be a dangerous command, use it with due diligence
+
+
+git cherry-pick
+* Creates a new commit with the changes that the cherry-pick commit introduce 
+- git cherry-pick <commitId>  -> The changes on the commit specified will come on the branch and a new commit is formed
+
+         C3 <- C4 
+        /  
+C1 <- C2 
+        \       
+         C5 <- C6 <- [C3']
+                |   (new commit)
+               HEAD
+
+command: git cherry-pick <C3>
 
 - touch index.html   -> Make a new file named index.html
 
