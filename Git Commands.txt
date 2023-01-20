@@ -112,8 +112,7 @@ If we rename a file, git will show that new file has been added and old has been
 
 git diff
 - git diff   -> compares staging area with working directory
-- git diff --stage  -> compares staging area with last commit
-- git diff --staged   -> will list the changes between the staging area and our last commit
+- git diff --staged (OR) git diff --cached  -> will list the changes between the staging area and our last commit
 - git diff HEAD   -> lists all changes in the working directory tree since your last commit
 - git diff HEAD <file-name>   -> to view the changes within a specific file
 - git diff <branch1> <branch2>   -> lists the changes between the tips of branch1 and branch2
