@@ -42,6 +42,18 @@ git reset
 - git reset --mixed HEAD~  -> 1 latest commit go to modified area, HEAD 1 commit back 
 - git reset --hard HEAD~5  -> 5 latest commits are removed permanently, HEAD 5 commit back 
 
+git revert 
+* Doesn't rewrite history as git reset. It does 2 things:
+1. Reverts the changes that the particular commit does 
+2. creates a new commit with reverted changes
+- git revert <commitId> : Revert the changes introduced by that particular commit and make a new commit 
+
+                            HEAD
+                              |
+     C1 <- C2 <- C3 <- C4 <- C3'    (git revert C3)
+                    (C3' doesn't contain C3 changes)
+
+
 git checkout
 - git checkout -- <fileName>   -> modified -> unmodified (undo changes made)
 
@@ -50,7 +62,6 @@ git stash
 - git stash pop -> return changes from stash to our working directory
 - git stash clear -> permanently delete changes from stash, they can't be recovered later
 - git stash list  -> Display the stash history in chronological order
-
 
 git restore
 * git restore can change the status of tracked files
