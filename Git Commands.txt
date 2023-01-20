@@ -11,10 +11,10 @@ git config
 
 - git status -> know status
 
-Status of untracked files:
+* Status of untracked files:
 1. Untracked
 
-Status of tracked files:
+* Status of tracked files:
 1. Unmodified
 2. Modified
 3. Staged
@@ -25,14 +25,14 @@ git add
 - git add .  , git add --a    -> move all files to staging area
 - git add <file_name>    -> Move a particular file to staging area
 - git add <>       -> is a multipurpose command
-It is used to add a file to staging area
-When used on untracked files, it brings them to tracking area also
+* It is used to add a file to staging area
+* When used on untracked files, it brings them to tracking area also
 
 git commit
 - git commit -m "Message"  -> Commit files (a snapshot will be taken)
 - git commit -am "Commit message"   -> Commits all tracked files skipping staging area (untracked files will remain as it is)
 - git commit --amend     -> We can change(edit) the last commit without making another commit
-The above command will not work when the latest commit is pushed in remote repo
+* The above command will not work when the latest commit is pushed in remote repo
 
 git reset
 - git reset HEAD <fileName>    -> staging area -> modified
@@ -49,7 +49,7 @@ git stash
 
 
 git restore
-git restore can change the status of tracked files
+* git restore can change the status of tracked files
 - git restore --staged <file_name>  -> staging area -> modified
 - git restore <file_name>  -> modified -> unmodified
 
@@ -69,6 +69,7 @@ git remote
 - git remote -v   -> show all remote repo URL attached to that local repo
 - git remote add upstream <original_repo_url>  -> Add a upstream branch, origin is our project's URL, upstream is URL where the original project exists
 
+git push
 - git push <URL> <branch_name>   -> Push the specified branch to specified URL(generally origin)
 - git push origin master    -> Push the master branch to the origin specified
 - git push origin <branch_name> -f  -> Push forcefully
@@ -81,28 +82,26 @@ git branching
 - git branch -d <branchName>      -> Delete the specified branch(make sure HEAD is not on that branch)
 - git checkout <branch_name>  -> Go to the branch specified, HEAD will come on that branch
 
-HEAD is a pointer, which points to a branch, at any given time
-All the new commits that we do, will be added to the branch, that the HEAD is pointing on
+** HEAD is a pointer, which points to a branch, at any given time (git show HEAD)
+** All the new commits that we do, will be added to the branch, that the HEAD is pointing on
 
 git merge
-git merge <branchName> -> merge the branch specified, with the one HEAD is currently on
-There are two types of merge:
+- git merge <branchName> -> merge the branch specified, with the one HEAD is currently on
+* There are two types of merge:
 1. Fast forwarding merge: HEAD shifts to latest commit, no new commit is created, happens when the branch HEAD is on has no different commit
 2. Normal merge: a new commit is created, HEAD shifts to latest
 
-Merge conflicts arise when there is change in same file, same line
-We can do 3 things in case of merge conflicts:
+* Merge conflicts arise when there is change in same file, same line
+* We can do 3 things in case of merge conflicts:
 1. Current changes
 2. Incoming changes
 3. Accept both changes
-
-One branch can only open one pull request
 
 - rm -rf .git  -> Remove .git file and hence all git repository details
 
 - git clone <URL>  -> clone the whole repository from the URL to the working directory (No git init needed) , ** the repository will contain all the commits and changes **
 
-If we rename a file, git will show that new file has been added and old has been deleted, but we have just renamed
+* If we rename a file, git will show that new file has been added and old has been deleted, but we have just renamed
 - git rm <file_name>  -> git will remove the file and stage it
 - git mv <file_name> <new_file_name>  -> rename the file and stage it
 
@@ -124,19 +123,20 @@ git restore
 - git restore --staged .    -> remove all the files from the staging area
 
 git rebase
-Used when we want to shift our commit(s) from one branch to other(mainly to main branch)
-When the commits are shifted from one branch to another, new commits are made which are almost identical to old ones
-New commits are made on the branch, on which rebasing is done
-It helps in linear development
+* Used when we want to shift our commit(s) from one branch to other(mainly to main branch)
+* When the commits are shifted from one branch to another, new commits are made which are almost identical to old ones
+* New commits are made on the branch, on which rebasing is done
+* It helps in linear development
 - git checkout <newBranch>   -> shift HEAD to newBranch
 - git rebase main            -> rebase commit(s) of newBranch to main
 - git rebase -i main        -> interactive console where we can select which commits to remove 
-git rebase can be a dangerous command, use it with due diligence
+* git rebase can be a dangerous command, use it with due diligence
 
 git fork 
 * fork the project from the original repository to our own remote repo(identical)
 * Very helpful in open-source contribution
 * How does it work: fork repo -> make changes -> commit -> set own remote repo (git remote set myOrigin <>) -> push on myOrigin > raise a P.R.  
+* One branch can only open one pull request
 
 git cherry-pick
 * Creates a new commit with the changes that the cherry-pick commit introduce 
