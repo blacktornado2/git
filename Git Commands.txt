@@ -32,6 +32,7 @@ git commit
 - git commit -m "Message"  -> Commit files (a snapshot will be taken)
 - git commit -am "Commit message"   -> Commits all tracked files skipping staging area (untracked files will remain as it is)
 - git commit --amend     -> We can change(edit) the last commit without making another commit
+- git commit --amend -m <newCommitMessage>  -> Change the last commit message
 * The above command will not work when the latest commit is pushed in remote repo
 
 git reset
