@@ -56,12 +56,15 @@ git revert
 
 git checkout
 - git checkout -- <fileName>   -> modified -> unmodified (undo changes made)
+- git checkout -   -> go to previous branch
 
 git stash
 - git stash    -> undo changes(modified file), but save those changes locally in stash
 - git stash pop -> return changes from stash to our working directory
 - git stash clear -> permanently delete changes from stash, they can't be recovered later
 - git stash list  -> Display the stash history in chronological order
+- git stash save <changesName>  -> Save changes locally with specified name
+- git stash apply <index>  -> Apply the changes of the specified index(first use git stash list)
 
 git restore
 * git restore can change the status of tracked files
