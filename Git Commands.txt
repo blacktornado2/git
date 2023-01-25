@@ -96,6 +96,7 @@ git branching
 - git checkout -b <newBranch>   
 - git branch -d <branchName>      -> Delete the specified branch(make sure HEAD is not on that branch)
 - git checkout <branch_name>  -> Go to the branch specified, HEAD will come on that branch
+- git branch -m <newBranchName>  -> Change the name of branch we are currently on, to name specified
 
 ** HEAD is a pointer, which points to a branch, at any given time (git show HEAD)
 ** All the new commits that we do, will be added to the branch, that the HEAD is pointing on
