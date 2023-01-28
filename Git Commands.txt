@@ -180,3 +180,7 @@ gitignore
 
 Git Aliasing
 - git config --global alias.'new Command' 'original Command' -> Make customised commands
+
+Git Show
+- git show <commitId> --stat  -> view changes in a specific commit
+- git show <commit> -- <filePath>  -> show changes in a particular file
