@@ -172,6 +172,10 @@ C1 <- C2
 
 command: git cherry-pick <C3>
 
+Git Switch
+- git switch <branchName>  -> Move the HEAD to branch specified(similar to git checkout)
+- git switch -c <newBranchName>  -> Make a new branch and switch to it
+
 - touch index.html   -> Make a new file named index.html
 
 gitignore
