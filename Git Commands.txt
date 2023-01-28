@@ -70,6 +70,7 @@ git stash
 git restore
 * git restore can change the status of tracked files
 - git restore --staged <file_name>  -> staging area -> modified
+- git restore --staged .    -> remove all the files from the staging area
 - git restore <file_name>  -> modified -> unmodified
 
 - git rm --cached <file_name>   -> to unstage the file and untrack it
@@ -137,10 +138,6 @@ git diff
 - git diff HEAD <file-name>   -> to view the changes within a specific file
 - git diff <branch1> <branch2>   -> lists the changes between the tips of branch1 and branch2
 - git diff <commit1hash> <commit2hash>   -> compare the changes between two commits
-
-git restore
-- git restore --staged <file_name>    -> remove a specific file from the staging area
-- git restore --staged .    -> remove all the files from the staging area
 
 git rebase
 * Used when we want to shift our commit(s) from one branch to other(mainly to main branch)
