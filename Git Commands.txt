@@ -76,6 +76,7 @@ git restore
 
 git log
 - git log  -> Show all commits and their corresponding hashes (press q to exit)
+- git log --oneline  - Show commits in one line
 - git log -p  -> Show commit with modifications
 - git log -p -3   -> Show 3 commits with modifications
 - git log --stat  -> Show us concise information about commit and modifications
@@ -85,7 +86,7 @@ git log
 git remote
 - git remote add origin <remote_repo_url>    -> Adds the remote repo URL to our local repo (origin is the name of the URL, we are giving)
 - git remote add myOrigin <remote_repo_url>   -> Adds the remote repo URL to our local repo, whenever we will write myOrigin, we will mean that url given
-- git remote -v   -> show all remote repo URL attached to that local repo
+- git remote -v   -> gitshow all remote repo URL attached to that local repo
 - git remote add upstream <original_repo_url>  -> Add a upstream branch, origin is our project's URL, upstream is URL where the original project exists
 
 git push
