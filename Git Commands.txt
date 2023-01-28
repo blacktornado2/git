@@ -110,7 +110,7 @@ git merge
 - git merge <branchName> -> merge the branch specified, with the one HEAD is currently on
 * There are two types of merge:
 1. Fast forwarding merge: HEAD shifts to latest commit, no new commit is created, happens when the branch HEAD is on has no different commit
-2. Normal merge: a new commit is created, HEAD shifts to latest
+2. Normal merge: a new commit is created, HEAD shifts to latest commit, and the branch pointer also shifts same as HEAD
 
 * Merge conflicts arise when there is change in same file, same line
 * We can do 3 things in case of merge conflicts:
