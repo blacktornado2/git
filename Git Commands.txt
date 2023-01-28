@@ -96,9 +96,8 @@ git push
 
 git branching
 - git branch   -> List all branches
-- git branch <new_branch_name>
-     OR                          -> Make a new branch with branchName specified
-- git checkout -b <newBranch>   
+- git branch <new_branch_name>  -> Make a new branch with branchName specified(HEAD doesn't move)
+- git checkout -b <newBranch>   -> Make a new branch and shift HEAD to that branch
 - git branch -d <branchName>      -> Delete the specified branch(make sure HEAD is not on that branch)
 - git checkout <branch_name>  -> Go to the branch specified, HEAD will come on that branch
 - git branch -m <newBranchName>  -> Change the name of branch we are currently on, to name specified
