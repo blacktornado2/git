@@ -161,13 +161,17 @@ git cherry-pick
 * Creates a new commit with the changes that the cherry-pick commit introduce 
 - git cherry-pick <commitId>  -> The changes on the commit specified will come on the branch and a new commit is formed
 
+             master
+                |
          C3 <- C4 
         /  
-C1 <- C2 
+C1 <- C2             
         \       
-         C5 <- C6 <- [C3']
-                |   (new commit)
-               HEAD
+         C5 <- C6 <- [C3'] (new commit)
+                       | 
+                    bug-fix
+                       |
+                      HEAD
 
 command: git cherry-pick <C3>
 
