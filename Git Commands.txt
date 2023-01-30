@@ -108,6 +108,44 @@ git branching
 ** HEAD is a pointer, which points to a branch, at any given time (git show HEAD)
 ** All the new commits that we do, will be added to the branch, that the HEAD is pointing on
 
+- git checkout <commitId>  -> We will go to that particular commit
+* HEAD will be in a detached state, not pointing to a branch, but a commit instead
+* Generally, HEAD points to a branch, but in this case it will point to a commit
+* To re-attach HEAD with a branch, use git checkout <branchName>
+
+                     HEAD                                              
+                      |
+                    master
+                      |  
+         C3 <- C4 <- C8
+        /  
+C1 <- C2 
+        \       
+         C5 <- C6 <- C7
+                     |
+                  bug-fix
+
+        (NORMAL STATE)
+
+
+=======================================================================                     
+                      
+                    master
+                      |  
+         C3 <- C4 <- C8
+        /  
+C1 <- C2                                [ git checkout C5 ]
+        \       
+         C5 <- C6 <- C7
+          |           |
+         HEAD       bug-fix
+
+        (DETACHED STATE)
+
+=======================================================================                     
+- git checkout HEAD~1  -> Go to the previous commit
+- git checkout HEAD~4  -> Go to 4 commits back
+
 git merge
 - git merge <branchName> -> merge the branch specified, with the one HEAD is currently on
 * There are two types of merge:
