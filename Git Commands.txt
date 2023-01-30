@@ -67,6 +67,7 @@ git stash
 - git stash list  -> Display the stash history in chronological order
 - git stash save <changesName>  -> Save changes locally with specified name
 - git stash apply <index>  -> Apply the changes of the specified index(first use git stash list)
+- git stash drop <index>  -> Delete the specified changes from the stash
 
 git restore
 * git restore can change the status of tracked files
