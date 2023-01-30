@@ -61,7 +61,8 @@ git checkout
 
 git stash
 - git stash OR git stash save -> undo changes(modified and staged both), but save those changes locally in stash
-- git stash pop -> return changes from stash to our working directory(changes will return and change the status of file to modified and not staged, even if at the time of stashing, they were staged)
+- git stash pop -> return changes from stash(and remove from stash) to our working directory(changes will return and change the status of file to modified and not staged, even if at the time of stashing, they were staged)
+- git stash apply  -> changes are returned, but unlike pop, changes will remain in stash
 - git stash clear -> permanently delete changes from stash, they can't be recovered later
 - git stash list  -> Display the stash history in chronological order
 - git stash save <changesName>  -> Save changes locally with specified name
