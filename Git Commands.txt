@@ -1,6 +1,9 @@
 **** I am the best Git Commands Cheatsheet in the Universe *****
 
 Learn git -> https://learngitbranching.js.org/?NODEMO
+Git Practice:
+1. https://github.com/eficode-academy/git-katas
+2. https://gitexercises.fracz.com/exercise/master
 
 git config
 - git config user.name  -> Display username
