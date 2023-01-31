@@ -96,9 +96,14 @@ git remote
 - git remote add upstream <original_repo_url>  -> Add a upstream branch, origin is our project's URL, upstream is URL where the original project exists
 
 git push
-- git push <URL> <branch_name>   -> Push the specified branch to specified URL(generally origin)
+- git push <remote> <branchName>   -> Push the specified branch to specified URL(generally origin)
 - git push origin master    -> Push the master branch to the origin specified
-- git push origin <branch_name> -f  -> Push forcefully
+- git push origin <branchName> -f  -> Push forcefully
+- git push <remote> <localBranch>:<remoteBranch>  -> Push a local branch to remote with different names
+- git push -u origin master  -> Push the local master branch to remote master branch, and remember that, so that we don't have to specify the branch next time and we can use git push 
+* -u is a flag for setting upstream branch for a local branch
+* Every branch can have an upstream branch
+* setting a upstream branch for a local branch means that they are now linked and we can use shorthand like git push, git pull 
 
 git branching
 - git branch   -> List all branches
