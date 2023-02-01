@@ -174,10 +174,19 @@ git merge
 - git rm <file_name>  -> git will remove the file and stage it
 - git mv <file_name> <new_file_name>  -> rename the file and stage it
 
-- git fetch origin           -> Fetch all the changes from origin(remote repo URL, e.g. Github)
+git fetch and git pull
+* branches at remote have name like <remote>/<branch>
+- git branch -r  -> branches at remote
+* When we clone a repo, and type git branch we see only default branch, but there are other branches too
+* If we want to see other branches too, use git switch <branchName>, it will make a local branch and connect that to the remote branch
+* If we use git checkout <branchName>, no new local branch is created and we will have detached HEAD
+- git checkout origin/master  -> checkout the remote branch pointers(detached HEAD, if it is behind local)
+- git fetch origin           -> Fetch all the changes from origin(remote repo URL, e.g. Github), but it doesn't show them integrating them into working files
 - git fetch --all --prune    -> fetch all the changes
 
 - git pull = git fetch + git merge
+- git pull <remote> <branch>  -> Fetch changes from the remote specified and merge the branch(from remote) specified with the branch we are currently on(local)
+* git pull can result in a merge conflict
 
 git diff
 - git diff   -> compares staging area with working directory
