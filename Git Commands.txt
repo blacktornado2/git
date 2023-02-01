@@ -236,6 +236,9 @@ C1 <- C2 <- C3
 
 =======================================================================                     
 
+** REBASE + MERGE = FAST-FORWARDING
+* We can also have conflicts in rebasing, solve them and then run: git rebase --continue
+
 git fork 
 * fork the project from the original repository to our own remote repo(identical)
 * Very helpful in open-source contribution
