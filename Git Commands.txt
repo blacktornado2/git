@@ -295,7 +295,6 @@ Git Show
 
 git tag
 - git tag  -> show all tags
-fmsmfi
 - git tag -l "*beta*"  -> list all tags with name beta in them
 * '*' is a wildcard -> any number of characters
 - git checkout <tag>  -> Go to the specified state (detached HEAD)
