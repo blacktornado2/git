@@ -153,6 +153,7 @@ C1 <- C2                                [ git checkout C5 ]
 =======================================================================                     
 - git checkout HEAD~1  -> Go to the previous commit
 - git checkout HEAD~4  -> Go to 4 commits back
+=======================================================================                     
 
 git merge
 - git merge <branchName> -> merge the branch specified, with the one HEAD is currently on
@@ -197,14 +198,58 @@ git diff
 - git diff <commit1hash> <commit2hash>   -> compare the changes between two commits
 
 git rebase
+1. Alternative to Merging
+2. Cleanup Tool
+
+1. Alternative to Merging
 * Used when we want to shift our commit(s) from one branch to other(mainly to main branch)
-* When the commits are shifted from one branch to another, new commits are made which are almost identical to old ones
+* When the commits are shifted from one branch to another, new commits are made which are almost identical to old ones(commitId's are different)
 * New commits are made on the branch, on which rebasing is done
 * It helps in linear development
-- git checkout <newBranch>   -> shift HEAD to newBranch
-- git rebase main            -> rebase commit(s) of newBranch to main
-- git rebase -i main        -> interactive console where we can select which commits to remove 
+- git checkout <newBranch>    -> shift HEAD to newBranch
+- git rebase master           -> rebase commit(s) of newBranch to master
+- git rebase -i master        -> interactive console where we can select which commits to remove, squash
 * git rebase can be a dangerous command, use it with due diligence
+
+                                master
+                                  |
+               C4 <- C8 <- C9 <- C10 
+              /
+C1 <- C2 <- C3 
+              \
+               C5 <- C6 <- C7
+                           |
+                        bug-fix
+                           |
+                          HEAD
+        
+        (BEFORE REBASING)
+=======================================================================                     
+
+                [git rebase master]
+
+                                                     HEAD
+                                                       |
+                                master              bug-fix
+                                  |                    |
+               C4 <- C8 <- C9 <- C10 <- C5' <- C6' <- C7'
+              /
+C1 <- C2 <- C3 
+              
+        (AFTER REBASING)
+
+=======================================================================                     
+
+** REBASE + MERGE = FAST-FORWARDING
+* We can also have conflicts in rebasing, solve them and then run: git rebase --continue
+
+2. Cleanup Tool
+* We can re-write history using git rebase
+* Edit commits, add files, drop commits
+* In this we are not rebasing onto another branch
+* We are rebasing a series of commits into the HEAD they are currently based on
+- git rebase -i HEAD~4  -> Go back 4 commits, interactive console will open
+* options available in console after using -i flag: pick, reword, edit, squash, fixup, drop
 
 git fork 
 * fork the project from the original repository to our own remote repo(identical)
