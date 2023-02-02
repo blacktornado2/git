@@ -292,3 +292,16 @@ Git Aliasing
 Git Show
 - git show <commitId> --stat  -> view changes in a specific commit
 - git show <commit> -- <filePath>  -> show changes in a particular file
+
+git tag
+- git tag  -> show all tags
+- git tag -l "*beta*"  -> list all tags with name beta in them
+* '*' is a wildcard -> any number of characters
+- git checkout <tag>  -> Go to the specified state (detached HEAD)
+- git diff <tag1> <tag2>  -> Show the differences
+- git tag <tagName>  -> create a lighweight tag at HEAD, referring to current commit
+- git tag -a <tagName>  -> create a new annotated tag
+- git show <tag>  -> show the details of the tag specified
+- git tag <tagName> <commitId> -> mark a previous commit as a tag 
+- git tag -d <tagName>  -> delete a tag
+- git push --tags  -> push all tags to remote 
