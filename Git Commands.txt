@@ -113,7 +113,8 @@ git branching
 - git checkout <branch_name>  -> Go to the branch specified, HEAD will come on that branch
 - git branch -m <newBranchName>  -> Change the name of branch we are currently on, to name specified
 
-** HEAD is a pointer, which points to a branch, at any given time (git show HEAD)
+** HEAD is a pointer, which points to a branch(normal state) or a commit (detached HEAD) at any given time (git show HEAD)
+** A branch name(like master, bug-fix) will always point to the latest commit on that branch, while it is not necessary with HEAD
 ** All the new commits that we do, will be added to the branch, that the HEAD is pointing on
 
 - git checkout <commitId>  -> We will go to that particular commit
@@ -158,8 +159,8 @@ C1 <- C2                                [ git checkout C5 ]
 git merge
 - git merge <branchName> -> merge the branch specified, with the one HEAD is currently on
 * There are two types of merge:
-1. Fast forwarding merge: HEAD shifts to latest commit, no new commit is created, happens when the branch HEAD is on has no different commit
-2. Normal merge: a new commit is created, HEAD shifts to latest commit, and the branch pointer also shifts same as HEAD
+1. Fast forwarding merge: HEAD and current branch shifts to latest commit, no new commit is created, happens when the branch HEAD is on has no different commit
+2. Normal merge: a new commit is created, HEAD and current branch shifts to latest commit, and the branch pointer also shifts same as HEAD
 
 * Merge conflicts arise when there is change in same file, same line
 * We can do 3 things in case of merge conflicts:
