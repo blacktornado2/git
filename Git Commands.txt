@@ -253,9 +253,9 @@ C1 <- C2 <- C3
 * options available in console after using -i flag: pick, reword, edit, squash, fixup, drop
 
 git fork 
-* fork the project from the original repository to our own remote repo(identical)
+* fork the project from the original repository to our own remote repo(identical) using Github, Gitlab etc. 
 * Very helpful in open-source contribution
-* How does it work: fork repo -> make changes -> commit -> set own remote repo (git remote set myOrigin <>) -> push on myOrigin > raise a P.R.  
+* How does it work: fork repo -> clone own forked repo -> make changes -> commit -> push on own repo -> raise a P.R.  
 * One branch can only open one pull request
 
 git cherry-pick
