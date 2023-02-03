@@ -289,6 +289,14 @@ gitignore
 Git Aliasing
 - git config --global alias.'new Command' 'original Command' -> Make customised commands
 
+git reflog
+* reflog -> reference logs
+* reflogs are only in local repo
+* reflogs expire after 90days, though this can be configured
+- git reflog show HEAD  -> show the history of HEAD
+- git reflog show <branchName>  -> show the history of branch
+* We can undo a hard reset: Find the commitId of the lost commit using git reflog, and use command git reset --hard <commitId>
+
 Git Show
 - git show <commitId> --stat  -> view changes in a specific commit
 - git show <commit> -- <filePath>  -> show changes in a particular file
