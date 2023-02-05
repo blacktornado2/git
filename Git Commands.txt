@@ -30,6 +30,7 @@ git add
 - git add <>       -> is a multipurpose command
 * It is used to add a file to staging area
 * When used on untracked files, it brings them to tracking area also
+* staging area is also called the index
 
 git commit
 - git commit -m "Message"  -> Commit files (a snapshot will be taken)
@@ -191,6 +192,7 @@ git fetch and git pull
 * git pull can result in a merge conflict
 
 git diff
+* If I just made a new commit and haven't yet staged anything new since the commit, then the staging area looks the same as the commit I just made.
 - git diff   -> compares staging area with working directory
 - git diff --staged (OR) git diff --cached  -> will list the changes between the staging area and our last commit
 - git diff HEAD   -> lists all changes in the working directory tree since your last commit
