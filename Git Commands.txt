@@ -11,6 +11,8 @@ git config
 - git config --global user.name "Ankit"  -> set the username to given
 - git config --global user.email "blacktornado2108@gmail.com"  -> set the user email to given
 - git config --list  -> Displays all the settings of git
+- git config --local user.name "AB"  -> set the local username as AB
+- git config --local user.email "ankitb@one.com"  -> set the local user's email as ankitb@one.com
 
 - git status -> know status
 
