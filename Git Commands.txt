@@ -5,6 +5,8 @@ Git Practice:
 1. https://github.com/eficode-academy/git-katas
 2. https://gitexercises.fracz.com/exercise/master
 
+Slides: https://drive.google.com/drive/folders/1Zix54uJosGFDCrL8ylCylTs48y8qGYm2?usp=sharing
+
 git config
 - git config user.name  -> Display username
 - git config user.email -> Display user's email
