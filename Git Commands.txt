@@ -7,14 +7,15 @@ Git Practice:
 
 Slides: https://drive.google.com/drive/folders/1Zix54uJosGFDCrL8ylCylTs48y8qGYm2?usp=sharing
 
-git config
-- git config user.name  -> Display username
-- git config user.email -> Display user's email
+git config (for global and local settings)
+- git config --list  -> Displays all the settings of git
+- git config user.name  -> Display username(local)
+- git config user.email -> Display user's email(local)
 - git config --global user.name "Ankit"  -> set the username to given
 - git config --global user.email "blacktornado2108@gmail.com"  -> set the user email to given
-- git config --list  -> Displays all the settings of git
 - git config --local user.name "AB"  -> set the local username as AB
 - git config --local user.email "ankitb@one.com"  -> set the local user's email as ankitb@one.com
+* If we don't use any flag such as --global or --local, by-default it will take --local
 
 - git status -> know status
 
