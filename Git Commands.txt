@@ -96,9 +96,11 @@ git log
 - git reflog  -> See the previous actions and commands executed 
 
 git remote
-- git remote add origin <remote_repo_url>    -> Adds the remote repo URL to our local repo (origin is the name of the URL, we are giving)
-- git remote add myOrigin <remote_repo_url>   -> Adds the remote repo URL to our local repo, whenever we will write myOrigin, we will mean that url given
+- git remote add origin <remoteRepoURL>    -> Adds the remote repo URL to our local repo (origin is the name of the URL, we are giving)
+- git remote add myOrigin <remoteRepoURL>   -> Adds the remote repo URL to our local repo, whenever we will write myOrigin, we will mean that url given
 - git remote -v   -> gitshow all remote repo URL attached to that local repo
+- git remote remove <remoteName>  -> remove the remote repo URL and remote repo name. <remoteName> is name given to remote url like origin
+- git remote set-url <remoteName> <remoteRepoURL>  -> Change the already set remote repo url to the url specified 
 - git remote add upstream <original_repo_url>  -> Add a upstream branch, origin is our project's URL, upstream is URL where the original project exists
 
 git push
@@ -109,7 +111,7 @@ git push
 - git push -u origin master  -> Push the local master branch to remote master branch, and remember that, so that we don't have to specify the branch next time and we can use git push 
 * -u is a flag for setting upstream branch for a local branch
 * Every branch can have an upstream branch
-* setting a upstream branch for a local branch means that they are now linked and we can use shorthand like git push, git pull 
+* setting a upstream branch for a local branch means that they are now linked and we can use shorthand like git push, git pull without using flags like -u
 
 git branching
 - git branch   -> List all branches
