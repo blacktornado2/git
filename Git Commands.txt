@@ -77,6 +77,7 @@ git stash
 - git stash save <changesName>  -> Save changes locally with specified name
 - git stash apply <index>  -> Apply the changes of the specified index(first use git stash list)
 - git stash drop <index>  -> Delete the specified changes from the stash
+- git stash push --keep-index  -> Keep the staged changes as it is, and move the unstaged changes to stash
 
 git restore
 * git restore can change the status of tracked files
