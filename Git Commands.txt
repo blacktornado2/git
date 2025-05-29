@@ -7,6 +7,10 @@ Git Practice:
 
 Slides: https://drive.google.com/drive/folders/1Zix54uJosGFDCrL8ylCylTs48y8qGYm2?usp=sharing
 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
 git config (for global and local settings)
 - git config --list  -> Displays all the settings of git
 - git config user.name  -> Display username(local)
@@ -29,6 +33,10 @@ git config (for global and local settings)
 
 - git init -> Initialise empty git repository, (a hidden .git folder is made, use ls -a to view it)
 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
 git add
 - git add .  , git add --a    -> move all files to staging area
 - git add <file_name>    -> Move a particular file to staging area
@@ -37,12 +45,20 @@ git add
 * When used on untracked files, it brings them to tracking area also
 * staging area is also called the index
 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
 git commit
 - git commit -m "Message"  -> Commit files (a snapshot will be taken)
 - git commit -am "Commit message"   -> Commits all tracked files skipping staging area (untracked files will remain as it is)
 - git commit --amend     -> We can change(edit) the last commit without making another commit
 - git commit --amend -m <newCommitMessage>  -> Change the last commit message
 * The above command will not work when the latest commit is pushed in remote repo
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
 
 git reset
 - git reset HEAD <fileName>    -> staging area -> modified
@@ -52,21 +68,41 @@ git reset
 - git reset --mixed HEAD~  -> 1 latest commit go to modified area, HEAD 1 commit back 
 - git reset --hard HEAD~5  -> 5 latest commits are removed permanently, HEAD 5 commit back 
 
-git revert 
-* Doesn't rewrite history as git reset. It does 2 things:
-1. Reverts the changes that the particular commit does 
-2. creates a new commit with reverted changes
-- git revert <commitId> : Revert the changes introduced by that particular commit and make a new commit 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+git revert
+* Doesn't rewrite history as git reset.
+* Reverts the changes that the particular commit does
+
+a)
+- git revert <commitID> : Revert the changes introduced by that particular commit and make a new commit 
 
                             HEAD
                               |
      C1 <- C2 <- C3 <- C4 <- C3'    (git revert C3)
                     (C3' doesn't contain C3 changes)
 
+b)
+- git revert --no-commit <commitID>
+
+                       HEAD
+                        |
+     C1 <- C2 <- C3 <- C4 + (C3 changes undo in staging area)    (git revert C3)
+                    (C3' doesn't contain C3 changes)
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
 
 git checkout
 - git checkout -- <fileName>   -> modified -> unmodified (undo changes made)
 - git checkout -   -> go to previous branch
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
 
 git stash
 - git stash OR git stash save -> undo changes(modified and staged both), but save those changes locally in stash
@@ -79,6 +115,10 @@ git stash
 - git stash drop <index>  -> Delete the specified changes from the stash
 - git stash push --keep-index  -> Keep the staged changes as it is, and move the unstaged changes to stash
 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
 git restore
 * git restore can change the status of tracked files
 - git restore --staged <file_name>  -> staging area -> modified
@@ -86,6 +126,10 @@ git restore
 - git restore <file_name>  -> modified -> unmodified
 
 - git rm --cached <file_name>   -> to unstage the file and untrack it
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
 
 git log
 - git log  -> Show all commits and their corresponding hashes (press q to exit)
@@ -96,6 +140,10 @@ git log
 - git log --all --decorate --oneline --graph   -> Beautify git log
 - git reflog  -> See the previous actions and commands executed 
 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
 git remote
 - git remote add origin <remoteRepoURL>    -> Adds the remote repo URL to our local repo (origin is the name of the URL, we are giving)
 - git remote add myOrigin <remoteRepoURL>   -> Adds the remote repo URL to our local repo, whenever we will write myOrigin, we will mean that url given
@@ -103,6 +151,10 @@ git remote
 - git remote remove <remoteName>  -> remove the remote repo URL and remote repo name. <remoteName> is name given to remote url like origin
 - git remote set-url <remoteName> <remoteRepoURL>  -> Change the already set remote repo url to the url specified 
 - git remote add upstream <original_repo_url>  -> Add a upstream branch, origin is our project's URL, upstream is URL where the original project exists
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
 
 git push
 - git push <remote> <branchName>   -> Push the specified branch to specified URL(generally origin)
@@ -114,6 +166,10 @@ git push
 * Every branch can have an upstream branch
 * setting a upstream branch for a local branch means that they are now linked and we can use shorthand like git push, git pull without using flags like -u
 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
 git branching
 - git branch   -> List all branches
 - git branch <new_branch_name>  -> Make a new branch with branchName specified(HEAD doesn't move)
@@ -121,6 +177,7 @@ git branching
 - git branch -d <branchName>      -> Delete the specified branch(make sure HEAD is not on that branch)
 - git checkout <branch_name>  -> Go to the branch specified, HEAD will come on that branch
 - git branch -m <newBranchName>  -> Change the name of branch we are currently on, to name specified
+
 
 ** HEAD is a pointer, which points to a branch(normal state) or a commit (detached HEAD) at any given time (git show HEAD)
 ** A branch name(like master, bug-fix) will always point to the latest commit on that branch, while it is not necessary with HEAD
